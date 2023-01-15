@@ -1,0 +1,47 @@
+<template>
+    
+    <lightning-card if:true={tempObj}>
+
+        <div class="slds-m-around_medium">
+             <h1><strong>Climate Corps Registration</strong></h1>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                    <lightning-input type="email" label="Email address (User ID)" value={emailAdress}  read-only></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <lightning-input type="text" label="First Name"  name="firstName" value={tempObj.firstName} onchange={handleForm} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium ">
+                    <lightning-input type="text" label="Last Name" name="lastName"  value={tempObj.lastName} onchange={handleForm} required></lightning-input>  
+                </div>
+                <p>Include country code if outside U.S</p>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                    <lightning-input type="phone" label="Phone" name="phone"  value={tempObj.phone} onchange={handleForm} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <lightning-combobox name="country" label="Country"  value={tempObj.country} placeholder="Select"
+                    options={options}
+                    onchange={handleForm}
+                    required
+                    ></lightning-combobox>                
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium ">
+                    <lightning-input type="number" name="postalCode"  label="Postal Code" value={tempObj.postalCode} onchange={handleForm} required></lightning-input>  
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium">
+                    <lightning-input type="text" name="state"  label="State" value={tempObj.state} onchange={handleForm} required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-around_medium ">
+                    <lightning-input type="text" name="city"  label="City" value={tempObj.city} onchange={handleForm} required></lightning-input>  
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium ">
+                    <lightning-input type="text" name="address1" label="Permanent Street Address Line 1" value={tempObj.address1} onchange={handleForm} required></lightning-input>  
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium ">
+                    <lightning-input type="text" name="address2" label="Permanent Street Address Line 2" value={tempObj.address2} onchange={handleForm} ></lightning-input>  
+                </div>
+            </div>
+            <lightning-button label="Submit" variant="success" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

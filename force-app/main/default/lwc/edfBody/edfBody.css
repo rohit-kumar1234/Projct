@@ -1,0 +1,13 @@
+.box {
+    border: 3px  solid red;
+}
+.register-btn{
+    --slds-c-button-radius-border:16px;
+    --slds-c-button-outline-brand-color-border: #203946;
+    --slds-c-button-text-color:#203946;
+
+
+}
+/*.bgImg{
+    background-image: url('../../staticresources/edfBackground.png');
+}*/

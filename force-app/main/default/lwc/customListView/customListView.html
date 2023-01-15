@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+
+            <lightning-datatable  if:true={miniAccountList}
+            key-field = "id"
+            data={miniAccountList}
+            columns={columns}
+            sorted-by={sortBy}
+            sorted-direction={sortDirection}
+            onsort={doSorting}
+            hide-checkbox-column></lightning-datatable>
+            <div slot="footer">
+                <c-pagination-list-view rcds={accList} size="4" onupdated={updateTable}></c-pagination-list-view>
+
+            </div>
+   </lightning-card>
+</template>

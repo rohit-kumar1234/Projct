@@ -1,0 +1,13 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-button label = "Previous" icon-name = "utility:chevronleft" onclick={handlePrevious} disabled={previousDisable}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item flexibility="grow">
+            <h1 class="slds-text-align_center">Displaying {currentPage} of  {noOfPages} Pages</h1>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button label = "Next" icon-position="right" icon-name = "utility:chevronright" onclick={handleNext} disabled={disableNext}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

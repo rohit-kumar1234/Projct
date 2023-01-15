@@ -1,0 +1,98 @@
+<template>
+    <lightning-card>
+       <!-- <lightning-radio-group name="radioGroup"
+        label="Radio Group"
+        options={options}
+        value={value}
+        onchange={handleRadioChange}
+        type="radio"></lightning-radio-group>
+        <p>hi</p> -->
+        <div ><!--if:true={flag} -->
+            <template for:each={itemList} for:item="item" for:index="index">
+                <lightning-record-edit-form   key={item.idx} object-api-name="OpportunityLineItem">
+                            
+                    <lightning-layout multiple-rows  vertical-align="center">
+                         
+                            <lightning-layout-item size="3"  padding="around-small"
+                                               ><!--Description-->
+                            <lightning-input-field field-name="Description" > </lightning-input-field>
+    
+                        </lightning-layout-item>
+                        <lightning-layout-item size="3"  padding="around-small"
+                                               ><!--Quantity-->
+                            <lightning-input-field field-name="Quantity" required> </lightning-input-field>
+                        </lightning-layout-item>
+                        
+                        <lightning-layout-item size="3"  padding="around-small"
+                                               >
+                            <lightning-input-field field-name="UnitPrice" required> </lightning-input-field>
+                        </lightning-layout-item>
+                         
+                        <lightning-layout-item size="2"  padding="around-small">
+                            <lightning-icon class="slds-p-large" name = "add" icon-name = "utility:add" onclick = {handleAdd} size = "small"></lightning-icon>
+                            <lightning-icon class="slds-p-large" access-key={item.id} name = "Delete" icon-name = "utility:delete" onclick = {handleDelete} size = "small"></lightning-icon>
+                        </lightning-layout-item>
+    
+                    </lightning-layout>
+                                            
+                                       
+                </lightning-record-edit-form>
+
+            </template>
+           <!-- <lightning-button variant="Error" onclick={handleCancel} name="Cancel" label="Cancel">
+            </lightning-button>
+            <lightning-button  variant="Success" onclick={handleFinish} name="Finish" label="Finish">
+            </lightning-button>      -->  
+        </div>
+        
+    </lightning-card>
+    
+       
+   
+</template>
+<!-- <lightning-button variant="brand" class="slds-var-m-around_medium"
+                                                    type="submit"
+                                                    name="submit"
+                                                    label="Submit" 
+                                                    onclick={submitHandler}               
+                                                >
+                                                </lightning-button>
+                                                <lightning-button variant="brand" class="slds-m-around_medium"
+                                                type="cancel"
+                                                name="Cancel"
+                                                label="Cancel"
+                                                onclick={gotoBack}                
+                                            >
+                                            </lightning-button>
+     <section  if:true={flags} role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+             
+             <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCancel}>
+                   <lightning-icon icon-name="utility:close"
+                      alternative-text="close"
+                      variant="inverse"
+                      size="small" ></lightning-icon>
+                   <span class="slds-assistive-text">Close</span>
+                </button>
+             </header>
+         
+             <div class="slds-modal__content slds-p-around_medium">
+                   
+              
+                      
+                  
+             </div>
+   
+            
+             <footer class="slds-modal__footer">
+              <lightning-button variant="Error" onclick={handleCancel} name="Cancel" label="Cancel">
+              </lightning-button>
+              <lightning-button  variant="Success" onclick={handleFinish} name="Finish" label="Finish">
+              </lightning-button>               
+          </footer>
+          
+          </div>
+       </section>
+                                        
+                                        -->

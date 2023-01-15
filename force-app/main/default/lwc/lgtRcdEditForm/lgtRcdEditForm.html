@@ -1,0 +1,25 @@
+<template>  
+    
+    <lightning-record-edit-form object-api-name="Opportunity" onsuccess={handleForm}>
+        <lightning-input-field field-name="Name"> </lightning-input-field>
+        <lightning-input-field field-name="StageName"> </lightning-input-field>
+        <lightning-input-field field-name="CloseDate" > </lightning-input-field>
+        <lightning-input-field field-name="Amount"> </lightning-input-field>
+        <lightning-input-field field-name="Type"> </lightning-input-field>
+
+        <lightning-input-field field-name="Product_link_up__c" value={productValue} onchange={handleproduct}> </lightning-input-field>
+            <lightning-input-field field-name="prob__c" value={probabilityValue} onchange={handleProbability}> </lightning-input-field>
+                <c-opp-line-item if:true={flag} prodct-id={productValue} opporty-id={oppId}></c-opp-line-item>
+            <lightning-button
+                    variant="brand"
+                    type="submit"
+                    name="save"
+                    label="Crate Opportunity"
+                    onclick={handleSave}
+                ></lightning-button>
+    </lightning-record-edit-form>
+    <p>productValue -- <strong>{productValue}</strong></p>
+    <p>probabilityValue -- <strong>{probabilityValue}</strong></p>
+    <p>oppId -- <strong>{oppId}</strong></p>
+
+</template>

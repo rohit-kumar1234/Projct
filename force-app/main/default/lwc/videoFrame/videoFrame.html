@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <!--"https://drive.google.com/file/d/1zErCKe3DudPl9KvVUm1_kmuG767lCJu9/preview"-->
+       
+       <lightning-layout horizontal-align="center" vertical-align="center" >
+            <lightning-layout-item>
+                <lightning-button-icon label="Previous" icon-name="utility:left" onclick={handlePrevious}></lightning-button-icon>
+            </lightning-layout-item>
+            <lightning-layout-item >
+                <iframe if:true={currentVedioUrl}  width="720" height="400" 
+                    src= {currentVedioUrl}
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-button-icon label="Next"  icon-name="utility:right" onclick={handleNext}></lightning-button-icon>        
+            </lightning-layout-item>
+       </lightning-layout>
+      
+    </lightning-card>
+</template>

@@ -1,0 +1,58 @@
+<template>
+    <div class="slds-m-horizontal_x-large " if:true={displayMain}  >
+        <div ></div>
+        <lightning-layout class="bodyHead">
+           <lightning-layout-item>
+                <h1 style="font-size: 40px;">Welcome to the Climate Corps Portal</h1> 
+                <p>If you have already created an account with us, please log in below.</p>
+           </lightning-layout-item>
+                
+        </lightning-layout><!--class="backgroundImg" style={getBackgroundImage}-->
+        <lightning-layout  class="bodyBody backgroundImg slds-m-around_small" >
+           <lightning-layout-item size="12" >
+                <lightning-input type="email" label="Email"></lightning-input> 
+                <lightning-input type="password" label="Password"></lightning-input>
+                <lightning-button label="Login" variant="brand-outline" onclick={handleLogin} class="register-btn"></lightning-button>
+                <a href="" class="slds-m-left_large">Forgot Password? </a>
+           </lightning-layout-item>
+           
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item  size="12" class="bodyFooter">
+                <div class="slds-grid slds-wrap">
+                    <h3 class="slds-col slds-size_1-of-2">{bodyFooTxt}</h3>
+                    <lightning-button class="slds-col slds-size_1-of-2 register-btn" label="Register Now" variant="brand-outline" onclick={handleRegister} ></lightning-button>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+<!--Email register part-->
+    <div class="" if:true={emailRegister}>
+        <h1>Climate Corps Registration</h1>
+        <lightning-input type="Email" label="Email address" placeholder="Enter your email address here" value={emailVal} onchange={handleEmail}>
+
+        </lightning-input>
+        <lightning-button label="go Back" onclick={handleBack}></lightning-button>
+        <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+    </div>
+    <div class="modal" if:true={openPopUp}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-button-icon icon-name="utility:close" variant="border-inverse" onclick={modalClose}></lightning-button-icon>
+                <div class="slds-modal__header">
+                    <h1  class="slds-modal__title slds-hyphenate">Email Id Verified</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>Now you can register with this email ID</p>
+                </div>
+                <div class="slds-modal__footer slds-modal__footer_directional">
+                    <lightning-button label="Register" variant="success" onclick={registerhandle}></lightning-button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div if:true={openForm}>
+        <c-edf-account-form email-adress={emailVal} ></c-edf-account-form>
+    </div>
+    
+</template>

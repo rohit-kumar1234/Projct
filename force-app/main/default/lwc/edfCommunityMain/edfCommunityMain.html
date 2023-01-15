@@ -1,0 +1,40 @@
+<template>
+    <lightning-card>
+        <lightning-layout class="edfHeader">
+            <lightning-layout-item size="9">
+                <div class="slds-m-around_x-small">
+                    <img src={headerLogoUrl} width="400px" height="100px" />
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <p>This is from layout size3</p>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout class="edfBody" style={backGround}>
+            
+            <lightning-layout-item size="8" padding=" horizontal-large" >
+                <lightning-card class="slds-m-around_large">
+                    <c-edf-body ></c-edf-body>
+                </lightning-card>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+        <lightning-layout class="edfFooter" slot="footer">
+            <lightning-layout-item class="fTop">
+                <lightning-layout-item size="4">
+                    <div>
+                        <img src={headerLogoUrl} width="150px" height="75px" />
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="8">
+                    
+                </lightning-layout-item>
+            </lightning-layout-item>
+            <lightning-layout-item class="fBottom">
+                
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+    
+</template>

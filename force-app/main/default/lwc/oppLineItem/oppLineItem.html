@@ -1,0 +1,57 @@
+<template>
+    <lightning-card>
+        <table class = "slds-table slds-table_cell-buffer slds-table_bordered slds-border_left slds-border_right"
+                aria-labelledby ="element-with-table-label other-element-with-table-label">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Sales Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={tableInput} for:item="item" for:index ="index" >
+                    <tr key = {item}>
+                        <td>
+                            <lightning-input type="text" name = "description" data-index ={item.id} varient = "label-hidden" 
+                                             value={item.Description} onchange={handleTableData} required></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="number" name="quantity" data-index={item.id} varient="label-hidden"
+                                             value={item.Quantity} onchange={handleTableData} required></lightning-input>
+                        </td>
+                        <td>
+                            <lightning-input type="number" name="price" data-index={item.id} varient="label-hidden"
+                                             value={item.UnitPrice} onchange={handleTableData} required ></lightning-input>
+
+                        </td>
+                       
+                        <td>
+                            <lightning-input type="number" name="totalprice" data-index={item.id} varient="label-hidden"
+                                             value={item.TotalPrice} onchange={handleTableData}  readonly></lightning-input>
+                                            
+                        </td>
+                        <td>
+                            <lightning-button-icon  class="slds-float--right" data-index={item.id} 
+                                                    icon-name="action:new" onclick={handleAdd} ></lightning-button-icon>
+                            <lightning-button-icon  class="slds-float--right" data-index={item.id} 
+                                                    icon-name="action:delete" onclick={handleDelete} ></lightning-button-icon>
+                        </td>
+                        
+                    </tr>
+                </template>
+
+            </tbody>
+
+        </table>
+        <lightning-card if:true={displayButton}>
+            <lightning-button-icon  class="slds-float--right" 
+            icon-name="action:new" onclick={handleLineItemClick} ></lightning-button-icon>
+
+        </lightning-card>
+       <!--<lightning-button if:true={displayButton} label="Add Line Items" onclick={handleLineItemClick}></lightning-button> --> 
+
+        <p>{opportyId}<strong>{prodctId}</strong></p>
+    </lightning-card>
+</template>

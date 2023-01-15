@@ -1,0 +1,78 @@
+<template>
+    <lightning-button label="Click Here" title="Click Me" 
+    variant="brand" onclick={handleClick} class="custom_button"
+    style="background-color: #fce205;border-radius: 10px;">
+    </lightning-button>
+
+    
+<lightning-button class="slds-button_brand slds-button_pill" 
+    
+    label="Click Me!"></lightning-button>
+
+
+        <lightning-button label="Open Modal" onclick={openModal}></lightning-button>
+     
+        <template if:true={showModal}>
+           <section role="dialog" tabindex="-1">
+              <div class="slds-modal slds-fade-in-open" style="width: 480px; height: 640px; top: 0; right: 0; position: relative ;">
+                 <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                       <h2 class="slds-text-heading_medium">Modal Header</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                       <!-- Modal content  --> body
+                    </div>
+                    <footer class="slds-modal__footer">
+                       <!-- Modal footer  --> footer
+                    </footer>
+                 </div>
+              </div>
+              <div class="slds-backdrop slds-backdrop_open"></div>
+           </section>
+        </template>
+     
+        <!--6666666666666666666666666666666666666666666666666666666666666666666666666666666-->
+
+        <lightning-card title="Create Form" icon-name="standard:user">
+            <lightning-layout>
+              <lightning-layout-item size="6">
+                <lightning-input
+                  label="First Name"
+                  name="firstName"
+                  value={firstName}
+                  onchange={handleChange}
+                ></lightning-input>
+              </lightning-layout-item>
+              <lightning-layout-item size="6">
+                <lightning-input
+                  label="Last Name"
+                  name="lastName"
+                  value={lastName}
+                  onchange={handleChange}
+                ></lightning-input>
+              </lightning-layout-item>
+              <lightning-layout-item size="12">
+                <lightning-input
+                  label="Email"
+                  name="email"
+                  type="email"
+                  value={email}
+                  onchange={handleChange}
+                ></lightning-input>
+              </lightning-layout-item>
+            </lightning-layout>
+            <lightning-button label="Save" onclick={handleSave}></lightning-button>
+          </lightning-card>
+
+
+          <iframe width="720" height="400" 
+          
+           src="https://drive.google.com/file/d/1zErCKe3DudPl9KvVUm1_kmuG767lCJu9/preview" 
+           frameborder="0" 
+           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+       </iframe>
+
+       <iframe 
+ src="https://drive.google.com/file/d/1LaY6OKIT6seE5SBVPbD1GOr3J7dgJi0N/preview" 
+ width="720" height="400"></iframe>
+</template>

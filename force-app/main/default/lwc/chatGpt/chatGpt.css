@@ -1,0 +1,6 @@
+.slds-button_brand {
+    --lwc-button-color: rgb(248,152,29);
+    
+
+    --lwc-button-border-radius:16px;
+}
